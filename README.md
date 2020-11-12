@@ -1,6 +1,6 @@
 # Excess Economics
 
-[![DOI](https://zenodo.org/badge/220447592.svg)](https://zenodo.org/badge/latestdoi/220447592) [![Generic badge](https://img.shields.io/badge/Python-3.8-<red>.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/License-MIT-green.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Maintained-Yes-red.svg)](https://shields.io/)
+ [![Generic badge](https://img.shields.io/badge/Python-3.8-blue.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/License-MIT-green.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Maintained-Yes-red.svg)](https://shields.io/)
 
 ### Introduction
 
