@@ -20,7 +20,7 @@ _data_: holds the X01 data.
 
 _figures_: holds the figures for the main letter and for previous months too.
 
-_letter_: A letter which replies to Polyakova.
+_letter_: A letter which replies to Polyakova et al (2020.
 
 _src_: contains the code for the optimal sarima forecasts and visualisation
 
