@@ -1,5 +1,4 @@
 # Excess Economics
----
 
 [![DOI](https://zenodo.org/badge/220447592.svg)](https://zenodo.org/badge/latestdoi/220447592) [![Generic badge](https://img.shields.io/badge/Python-3.8-<red>.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/License-MIT-green.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Maintained-Yes-red.svg)](https://shields.io/)
 
@@ -18,8 +17,11 @@ This code is operating system independent (through the ``os`` module) and should
 ### Structure
 
 _data_: holds the X01 data.
+
 _figures_: holds the figures for the main letter and for previous months too.
+
 _letter_: A letter which replies to Polyakova.
+
 _src_: contains the code for the optimal sarima forecasts and visualisation
 
 ### License
