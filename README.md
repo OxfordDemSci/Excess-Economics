@@ -22,7 +22,7 @@ _figures_: holds the figures for the main letter and for previous months too.
 
 _letter_: A letter which replies to [Polyakova _et al._ (2020](https://www.pnas.org/content/early/2020/10/19/2014279117).
 
-_src_: contains the code for the optimal sarima forecasts and visualisation
+_src_: contains the code for parsing and wrangling the data, seasonally adjusting it, conducting optimal arima forecasts, and visualisation
 
 ### License
 
