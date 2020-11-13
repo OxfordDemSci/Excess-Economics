@@ -12,7 +12,7 @@ As a pre-requisite to running this locally, you will need a working Python 3 ins
 
 ### Running the Code
 
-This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and macOS all the same. To run: clone this directory, ``cd`` into the directory, and serve the project by simply running the ``main.py`` file. If updating to future variants of the XO1 data, don't forget to change the string in ``main.py``!
+This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and macOS all the same. To run: clone this directory, ``cd`` into the directory, and serve the project by simply running the ``main.py`` file. If updating to future variants of the X01 data, don't forget to change the string in ``main.py``!
 
 ### Structure
 
