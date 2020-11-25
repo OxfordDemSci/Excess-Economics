@@ -14,6 +14,7 @@ from make_visuals import plot_func
 import os
 import warnings
 import re
+
 warnings.filterwarnings("ignore")
 
 
@@ -28,11 +29,11 @@ def main():
     df = make_seasonal(df, freq)
     df = make_total_columns(df)
     age_ratios = make_empage_ratios(df)
-    age_forecasts = gen_forecast(age_ratios, freq)
+    age_forecasts = gen_forecast(age_ratios, freq)*100
     allreg = make_reg_forc(df)
-    allreg_forecasts = gen_forecast(allreg, freq)
+    allreg_forecasts = gen_forecast(allreg, freq)*100
     heatmap_vars = make_heatmap_vars(df)
-    heatmap_forc = gen_forecast(heatmap_vars, freq)
+    heatmap_forc = gen_forecast(heatmap_vars, freq)*100
     for back in range(1, 6):
         if back == 1:
             filename = re.sub(r'\W+', '',
@@ -40,6 +41,10 @@ def main():
             age_df = make_age_df(age_forecasts[-back:])
             allreg_df = make_allreg_df(allreg_forecasts[-back:])
             heatmap_df = make_heatmap_df(heatmap_forc[-back:])
+            age_df.to_csv(os.path.join(data_path, 'age_df.csv'))
+            age_forecasts.to_csv(os.path.join(data_path, 'age_forecasts.csv'))
+            heatmap_df.to_csv(os.path.join(data_path, 'heatmap_df.csv'))
+            allreg_df.to_csv(os.path.join(data_path, 'allreg_df.csv'))
         else:
             filename = re.sub(r'\W+', '',
                               age_forecasts[-back:-back+1].index[0]) + '.csv'

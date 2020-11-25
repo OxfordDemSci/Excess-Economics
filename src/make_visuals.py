@@ -39,38 +39,39 @@ def plot_func(age_forecasts, allreg_df, age_df,
     # A.
     age_forecasts.index = age_forecasts.index.str.replace('201', "'1")
     age_forecasts.index = age_forecasts.index.str.replace('202', "'2")
-    annot_spot = 108
+    start_spot = 140
+    annot_spot = 223-start_spot
     legend_elements = [Line2D([0], [0], color=color[1], lw=1,
                        label='Observed', alpha=1),
                        Patch(facecolor=color[0], edgecolor='k',
                              lw=0.5, label='90% CIs', alpha=0.2)]
     all = 'allage_empratio_allreg'
-    age_forecasts[[all + '_m']][115:].plot(ax=ax1, legend=False,
-                                           color=[color[1]])
-    ax1.fill_between(age_forecasts[115:].index,
-                     age_forecasts[all + '_m_ci_right'][115:],
-                     age_forecasts[all + '_m_ci_left'][115:],
+    age_forecasts[[all + '_m']][start_spot:].plot(ax=ax1, legend=False,
+                                                  color=[color[1]])
+    ax1.fill_between(age_forecasts[start_spot:].index,
+                     age_forecasts[all + '_m_ci_right'][start_spot:],
+                     age_forecasts[all + '_m_ci_left'][start_spot:],
                      alpha=0.2)
     ax1.set_xlabel('')
     ax1.axvline(x=annot_spot, linewidth=1, color='k', linestyle='--',
                 alpha=.35, dashes=(12, 6))
-    ax1.annotate("Viral outbreak", xy=(annot_spot, .6365), xycoords='data',
-                 xytext=(annot_spot-37, .636), fontsize=10, textcoords='data',
+    ax1.annotate("Viral outbreak", xy=(annot_spot, 63.65), xycoords='data',
+                 xytext=(annot_spot-37, 63.6), fontsize=10, textcoords='data',
                  arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
     ax1.legend(handles=legend_elements, loc='upper left', frameon=False)
     ax1.set_xticklabels([])
     ax1.set_xticks([])
-    age_forecasts[[all + '_w']][115:].plot(ax=ax2, legend=False,
-                                           color=[color[1]])
-    ax2.fill_between(age_forecasts[115:].index,
-                     age_forecasts[all + '_w_ci_right'][115:],
-                     age_forecasts[all + '_w_ci_left'][115:], alpha=0.2)
+    age_forecasts[[all + '_w']][start_spot:].plot(ax=ax2, legend=False,
+                                                  color=[color[1]])
+    ax2.fill_between(age_forecasts[start_spot:].index,
+                     age_forecasts[all + '_w_ci_right'][start_spot:],
+                     age_forecasts[all + '_w_ci_left'][start_spot:], alpha=0.2)
     ax2.set_xlabel('')
     ax2.xaxis.set_tick_params(rotation=10)
     ax2.axvline(x=annot_spot, linewidth=1, color='k', linestyle='--',
                 alpha=.35, dashes=(12, 6))
-    ax2.annotate("Viral outbreak", xy=(annot_spot, .5325), xycoords='data',
-                 xytext=(annot_spot-37, .53125), fontsize=10,
+    ax2.annotate("Viral outbreak", xy=(annot_spot, 53.25), xycoords='data',
+                 xytext=(annot_spot-37, 53.125), fontsize=10,
                  textcoords='data',
                  arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
     ax1.set_ylabel('Emp-Pop Ratio: M')
@@ -133,7 +134,7 @@ def plot_func(age_forecasts, allreg_df, age_df,
     y_labels = [v for v in sorted(y.unique())]
     x_to_num = {p[1]: p[0] for p in enumerate(x_labels)}
     y_to_num = {p[1]: p[0] for p in enumerate(y_labels)}
-    size_scale = 5000
+    size_scale = 50
     ax7.scatter(x=x.map(x_to_num), y=y.map(y_to_num), s=size * size_scale,
                 c=corr['value'].apply(value_to_color), marker='o')
     ax7.set_xticks([x_to_num[v] for v in x_labels])
@@ -174,7 +175,9 @@ def plot_func(age_forecasts, allreg_df, age_df,
     sns.despine(ax=ax6)
     sns.despine(ax=ax7)
     center_ylabels(ax3, ax4)
-    plt.savefig(os.path.join(fig_path, filename + '.pdf'),
+    plt.savefig(os.path.join(fig_path, filename[:-4] + '.pdf'),
                 bbox_inches='tight')
-    plt.savefig(os.path.join(fig_path, filename + '.png'),
+    plt.savefig(os.path.join(fig_path, filename[:-4] + '.svg'),
+                bbox_inches='tight')
+    plt.savefig(os.path.join(fig_path, filename[:-4] + '.png'),
                 dpi=600, bbox_inches='tight')
