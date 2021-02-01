@@ -4,7 +4,7 @@
 
 ### Introduction
 
-This is a repository to accompany a reply to [Polyakova _et al_. (2020)](https://www.pnas.org/content/early/2020/10/19/2014279117). It might be thought of as a compliament to [Excess-Deaths](https://github.com/OxfordDemSci/Excess-Deaths). It is written in Python 3, and utilizes [X01](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/regionalemploymentbyagex01/current) data from the Office for National Statistics. It calculates Excess Economic Loss in Great Britain following the Covid-19 pandemic. It uses optimal ARIMA models based on [pmdarima](https://github.com/alkaline-ml/pmdarima)
+This is a repository to consider excess economic loss in the UK in response to the Covid-19 pandemic. It might be thought of as a compliament to [Excess-Deaths](https://github.com/OxfordDemSci/Excess-Deaths). It is written in Python 3, and utilizes [X01](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/regionalemploymentbyagex01/current) data from the Office for National Statistics. It calculates Excess Economic Loss in Great Britain following the Covid-19 pandemic. It uses optimal ARIMA models based on [pmdarima](https://github.com/alkaline-ml/pmdarima)
 
 ### Prerequisites
 
@@ -20,7 +20,7 @@ _data_: holds the X01 data.
 
 _figures_: holds the figures for the main letter and for previous months too.
 
-_letter_: A letter which replies to [Polyakova _et al._ (2020](https://www.pnas.org/content/early/2020/10/19/2014279117).
+_letter_: A letter describing the work.
 
 _src_: contains the code for parsing and wrangling the data, seasonally adjusting it, conducting optimal arima forecasts, and visualisation
 
